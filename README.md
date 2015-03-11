@@ -1,3 +1,4 @@
+
 # About
 
 Notify is a notification bar element for surfacing useful feedback
@@ -28,5 +29,3 @@ $ grunt build   // build the dependencies
 [Guide for creating X-Tag Components](https://github.com/x-tag/core/wiki/Creating-X-Tag-Components)
 
 [Using X-Tag components in your applications](https://github.com/x-tag/core/wiki/Using-our-Web-Components-in-Your-Application)
-
-
