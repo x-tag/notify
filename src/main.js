@@ -1,15 +1,15 @@
 (function(){
-  
+
   xtag.register('x-notify', {
     lifecycle: {
       inserted: function(){
         this.parentNode.setAttribute('x-notify-parentnode', '');
       },
-      removed: function(){
-        if (!xtag.queryChildren(this.parentNode, 'x-notify')[0]) this.parentNode.removeAttribute('x-notify-parentnode');
+      removed: function(parent){
+        if (!xtag.queryChildren(parent, 'x-notify')[0]) parent.removeAttribute('x-notify-parentnode');
       }
     },
-    events: { 
+    events: {
       'tap:delegate([closable])': function(e){
         if (e.target == e.currentTarget) e.currentTarget.hide();
       }
@@ -28,7 +28,7 @@
           return val || 3000;
         }}
       }
-    }, 
+    },
     methods: {
       'show:transition': function(){
         if (!this.showing) this.showing = true;
