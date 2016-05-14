@@ -23,51 +23,54 @@ x-notify {
   -ms-transform: translateY(100%);
   transform: translateY(100%);
   -webkit-transition: opacity 0.4s, transform 0.4s;
-  -ms-transition: opacity 0.4s, transform 0.4s;
   transition: opacity 0.4s, transform 0.4s;
 }
-  
+
   x-notify > *, x-notify:before, x-notify:after {
     display: inline-block;
     vertical-align: middle;
   }
-  
+
   x-notify[closable]:after {
-    content: "✖";
+    content: "×";
     position: absolute;
     top: 50%;
     right: 0;
-    width: 2.5em;
+    width: 1em;
+    height: 1em;
+    margin: 0 0.4em;
+    color: #f00;
+    background: #fff;
+    border-radius: 1em;
+    font-size: 1.25em;
+    font-weight: bold;
     text-align: center;
+    line-height: 1em;
     cursor: pointer;
     -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
-  
+
   x-notify[position="top"] {
     top: 0;
     bottom: auto;
     -webkit-transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
     transform: translateY(-100%);
   }
-  
+
   x-notify[transition="show"] {
     display: block;
     opacity: 1;
     -webkit-transform: translateY(0%);
-    -ms-transform: translateY(0%);
     transform: translateY(0%);
   }
 
   x-notify[transition="hide"] {
     opacity: 0;
     -webkit-transition-duration: 0.2s;
-    -ms-transition-duration: 0.2s;
     transition-duration: 0.2s;
   }
-  
+
   x-notify[transitioning] {
     display: block;
   }
@@ -85,5 +88,3 @@ x-notify[type="warning"] {
 x-notify[type="error"] {
   background-color: #e74c3c;
 }
-
-
